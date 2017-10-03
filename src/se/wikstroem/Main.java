@@ -34,7 +34,7 @@ public class Main {
 
         //Fråga personalen om vilket djur som ska få mat
 
-        String name= JOptionPane.showInputDialog(" Vad heter djuret som ska matas?");
+        String name = JOptionPane.showInputDialog("Vad heter djuret som ska matas?");
 
         // Hitta rätt djur
         Animal animaltofeed = null;
@@ -47,15 +47,16 @@ public class Main {
 
 
         if (animaltofeed == null) {
-            JOptionPane.showMessageDialog(null, " Inget djur heter så");
+            JOptionPane.showMessageDialog(null, "Inget djur heter så");
 
-        }else {
+        } else {
             StringBuilder text = new StringBuilder();
 
-            // Dynamiskbindning: getFoodPortioninGrams finns i interface Feedable. Alla klasser har den metoden. Men det är inte förens programmet körs som exempelvis hund/katt -versionen av metoden som anropas
+            // Dynamiskbindning: getFoodPortioninGrams finns i interface Feedable. Alla klasser har den metoden.
+            // Men det är inte förens programmet körs som exempelvis hund/katt -versionen av metoden som anropas
 
             text.append(animaltofeed.getName())
-                    .append("ska ha")
+                    .append(" ska ha ")
                     .append(String.format("%.2f", animaltofeed.getFoodPortionInGrams()))
                     .append(" gram av ")
                     .append(animaltofeed.getFoodType());
